@@ -1,0 +1,43 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+        "airbnb-base", // Extiende las reglas base de Airbnb para JavaScript
+        "airbnb-typescript/base", // Extiende las reglas de Airbnb a TypeScript
+        "eslint:recommended", // Activa las reglas recomendadas de ESLint
+        "plugin:@typescript-eslint/recommended" // Activa las reglas recomendadas para TypeScript
+    ],
+    "parserOptions": {
+        "project": "./tsconfig.json", // Configura el proyecto TypeScript
+        "tsconfigRootDir": "./", // Define la raíz del tsconfig
+        "sourceType": "module" // Usa módulos ES6
+    },
+    "rules": {
+        "max-classes-per-file": "off", // Permite múltiples clases por archivo
+        "lines-between-class-members": "off", // Desactiva la exigencia de línea en blanco entre miembros de clase
+        "prefer-const": "off", // Permite usar `let` incluso cuando la variable no cambia
+        "@typescript-eslint/no-inferrable-types": "off", // Permite declarar tipos explícitos aunque sean inferibles
+        "linebreak-style": "off", // Desactiva el chequeo de estilo de salto de línea (Windows/Linux/Mac)
+        "import/prefer-default-export": "off", // No obliga a usar exportaciones por defecto
+        "class-methods-use-this": "off", // Permite métodos de clase que no usan `this`
+        "import/no-extraneous-dependencies": "off", // No chequea dependencias extráneas
+        "no-param-reassign": "off", // Permite reasignar parámetros en funciones
+        "no-throw-literal": "off", // Permite lanzar literales
+        "@typescript-eslint/no-throw-literal": "off", // Permite lanzar literales en TypeScript
+        "no-restricted-syntax": "off", // Desactiva restricciones de ciertas sintaxis
+        "max-len": "off", // Desactiva la restricción de longitud máxima de línea
+        "no-console": "off", // Permite el uso de `console.log` y otros
+        "@typescript-eslint/no-explicit-any": "off", // Permite el uso del tipo `any`
+        "object-curly-newline": ["off"], // Desactiva la regla de saltos de línea en objetos
+        "no-plusplus": "off" // Permite el uso de operadores `++` y `--`
+    },
+    "overrides": [
+        {
+            "files": ["*.js"],
+            "parser": "espree", // Usa el parser estándar para archivos JavaScript
+            "rules": {
+                "@typescript-eslint/no-var-requires": "off" // Desactiva la regla que prohíbe `require` en archivos JS
+            }
+        }
+    ]
+  }
+  
